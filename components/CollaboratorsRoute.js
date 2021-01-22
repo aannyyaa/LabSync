@@ -2,31 +2,27 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {
-  Appbar,
-  Avatar,
-  BottomNavigation,
-  Colors,
-  IconButton,
-} from 'react-native-paper';
-
+import { Avatar, Colors, List } from 'react-native-paper';
 
 const CollaboratorsRoute = () => {
   return (
-    <View style={styles.accountsContainer}>
-      <View style={styles.accounts}>
-        <Avatar.Icon size={30} backgroundColor={Colors.cyan400} icon="account" />
-        <Text style={styles.instructions}>Name 1</Text>
-      </View>
-      <View style={styles.accounts}>
-        <Avatar.Icon size={30}  backgroundColor={Colors.cyan400} icon="account" />
-        <Text style={styles.instructions}>Name 2</Text>
-      </View>
-      <View style={styles.accounts}>
-        <Avatar.Icon size={30} backgroundColor={Colors.cyan400} icon="account" />
-        <Text style={styles.instructions}>Name 3</Text>
-      </View>
-    </View>
+    <>
+      <List.Item
+        title="First Person"
+        description="information"
+        left={(props) => <List.Icon {...props} color={Colors.cyan400} icon="account" />}
+      />
+      <List.Item
+        title="Second Person"
+        description="information"
+        left={(props) => <List.Icon {...props} color={Colors.cyan400} icon="account" />}
+      />
+      <List.Item
+        title="Third Person"
+        description="information"
+        left={(props) => <List.Icon {...props} color={Colors.cyan400} icon="account" />}
+      />
+    </>
   );
 };
 
