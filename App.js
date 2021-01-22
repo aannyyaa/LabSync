@@ -2,9 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { Appbar } from 'react-native-paper';
+import { Appbar, BottomNavigation } from 'react-native-paper';
 
-export default function App() {
+const TasksRoute = () => <Text>tasks</Text>;
+
+const ImagesRoute = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
@@ -21,23 +23,53 @@ export default function App() {
     }
 
     setSelectedImage({ localUri: pickerResult.uri });
+    if (selectedImage !== null) {
+      return (
+        <View style={styles.container}>
+          <Image
+            source={{ uri: selectedImage.localUri }}
+            style={styles.thumbnail}
+          />
+        </View>
+      );
+    }
   };
 
-  if (selectedImage !== null) {
-    return (
-      <View style={styles.container}>
-        <Image
-          source={{ uri: selectedImage.localUri }}
-          style={styles.thumbnail}
-        />
-      </View>
-    );
-  }
+  return (
+    <View style={styles.contentContainer}>
+      <Image
+        source={{ uri: 'https://i.imgur.com/TkIrScD.png' }}
+        style={styles.logo}
+      />
+      <Text style={styles.instructions}>Hello world</Text>
+      <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
+        <Text style={styles.buttonText}>Pick a photo</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+const CollaboratorsRoute = () => <Text>collaborators</Text>;
+
+export default function App() {
+  const [index, setIndex] = React.useState(0);
+  const [routes] = React.useState([
+    { key: 'tasks', title: 'tasks', icon: 'flask' },
+    { key: 'images', title: 'images', icon: 'image' },
+    { key: 'collaborators', title: 'collaborators', icon: 'account-multiple' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    tasks: TasksRoute,
+    images: ImagesRoute,
+    collaborators: CollaboratorsRoute,
+  });
+
   return (
     <View style={styles.container}>
       <Appbar.Header style={styles.top}>
         <Appbar.BackAction onPress={() => console.log('Went back')} />
-        <Appbar.Content title="Title" subtitle="Subtitle" />
+        <Appbar.Content title="title" />
         <Appbar.Action
           icon="magnify"
           onPress={() => console.log('Searching')}
@@ -47,17 +79,8 @@ export default function App() {
           onPress={() => console.log('Shown more')}
         />
       </Appbar.Header>
-      <View style={styles.contentContainer}>
-        <Image
-          source={{ uri: 'https://i.imgur.com/TkIrScD.png' }}
-          style={styles.logo}
-        />
-        <Text style={styles.instructions}>Hello world</Text>
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-          <Text style={styles.buttonText}>Pick a photo</Text>
-        </TouchableOpacity>
-      </View>
-      <Appbar style={styles.bottom}>
+
+      {/* <Appbar style={styles.bottom}>
         <Appbar.Action
           icon="archive"
           onPress={() => console.log('Pressed archive')}
@@ -74,7 +97,12 @@ export default function App() {
           icon="delete"
           onPress={() => console.log('Pressed delete')}
         />
-      </Appbar>
+      </Appbar> */}
+      <BottomNavigation
+        navigationState={{ index, routes }}
+        onIndexChange={setIndex}
+        renderScene={renderScene}
+      />
       <StatusBar style="auto" />
     </View>
   );
