@@ -30,14 +30,7 @@ const ImagesRoute = () => {
 
     setSelectedImage({ localUri: pickerResult.uri });
     if (selectedImage !== null) {
-      // return (
-      //   <View style={styles.contentContainer}>
-      //     <Image
-      //       source={{ uri: selectedImage.localUri }}
-      //       style={styles.thumbnail}
-      //     />
-      //   </View>
-      // );
+
       imageSource = { uri: selectedImage.localUri }
 
       console.log('IMAGE');

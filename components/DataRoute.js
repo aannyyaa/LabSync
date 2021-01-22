@@ -2,16 +2,36 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {
-  Appbar,
-  Avatar,
-  BottomNavigation,
-  Colors,
-  IconButton,
-} from 'react-native-paper';
+import { DataTable } from 'react-native-paper';
 
-const TasksRoute = () => <Text style={styles.instructions}>data</Text>;
-
+const DataRoute = () => {
+  return (
+    <DataTable>
+      <DataTable.Header>
+        <DataTable.Title>experiment</DataTable.Title>
+        <DataTable.Title numeric>results</DataTable.Title>
+      </DataTable.Header>
+      <DataTable.Row>
+        <DataTable.Cell>experiment 1</DataTable.Cell>
+        <DataTable.Cell numeric>
+          {Math.floor(Math.random() * 100)}
+        </DataTable.Cell>
+      </DataTable.Row>
+      <DataTable.Row>
+        <DataTable.Cell>experiment 2</DataTable.Cell>
+        <DataTable.Cell numeric>
+          {Math.floor(Math.random() * 100)}
+        </DataTable.Cell>
+      </DataTable.Row>
+      <DataTable.Row>
+        <DataTable.Cell>experiment 3</DataTable.Cell>
+        <DataTable.Cell numeric>
+          {Math.floor(Math.random() * 100)}
+        </DataTable.Cell>
+      </DataTable.Row>
+    </DataTable>
+  );
+};
 
 const styles = StyleSheet.create({
   instructions: {
@@ -30,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TasksRoute;
+export default DataRoute;
