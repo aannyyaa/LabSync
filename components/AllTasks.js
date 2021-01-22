@@ -13,13 +13,9 @@ import { Checkbox } from 'react-native-paper';
 const TasksRoute = ({ navigation }) => {
   return (
     <View>
-      <Checkbox.Item label="task 1" status="checked" />
-      <Checkbox.Item label="task 2" status="indeterminate" />
-      <Checkbox.Item label="task 3" status="indeterminate" />
-      <Button
-        title="single task"
-        onPress={() => navigation.navigate('singleTask')}
-      />
+      <Checkbox.Item label="task 1" status="checked" onPress={() => navigation.navigate('single task')}/>
+      <Checkbox.Item label="task 2" status="indeterminate" onPress={() => navigation.navigate('single task')}/>
+      <Checkbox.Item label="task 3" status="indeterminate" onPress={() => navigation.navigate('single task')}/>
     </View>
   );
 };
