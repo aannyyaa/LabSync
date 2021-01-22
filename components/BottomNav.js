@@ -9,28 +9,33 @@ import {
   Colors,
   IconButton,
 } from 'react-native-paper';
-import BottomNav from './components/BottomNav';
+import TasksRoute from './TasksRoute'
+import ImagesRoute from './ImagesRoute'
+import CollaboratorsRoute from './CollaboratorsRoute'
 
-export default function App() {
+const BottomNav = () => {
+  const [index, setIndex] = React.useState(0);
+
+  const [routes] = React.useState([
+    { key: 'tasks', title: 'tasks', icon: 'flask' },
+    { key: 'images', title: 'images', icon: 'image' },
+    { key: 'collaborators', title: 'collaborators', icon: 'account-multiple' },
+  ]);
+
+  const renderScene = BottomNavigation.SceneMap({
+    tasks: TasksRoute,
+    images: ImagesRoute,
+    collaborators: CollaboratorsRoute,
+  });
+
   return (
-    <View style={styles.container}>
-      <Appbar.Header style={styles.top}>
-        <Appbar.BackAction onPress={() => console.log('Went back')} />
-        <Appbar.Content />
-        <Appbar.Action
-          icon="magnify"
-          onPress={() => console.log('Searching')}
-        />
-        <Appbar.Action
-          icon="dots-vertical"
-          onPress={() => console.log('Shown more')}
-        />
-      </Appbar.Header>
-      <BottomNav />
-      <StatusBar style="auto" />
-    </View>
+    <BottomNavigation
+      navigationState={{ index, routes }}
+      onIndexChange={setIndex}
+      renderScene={renderScene}
+    />
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -83,3 +88,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
+
+export default BottomNav;

@@ -9,28 +9,48 @@ import {
   Colors,
   IconButton,
 } from 'react-native-paper';
-import BottomNav from './components/BottomNav';
 
-export default function App() {
+const ImagesRoute = () => {
+  const [selectedImage, setSelectedImage] = React.useState(null);
+  let openImagePickerAsync = async () => {
+    let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert('Permission to access camera roll is required!');
+      return;
+    }
+
+    let pickerResult = await ImagePicker.launchImageLibraryAsync();
+
+    if (pickerResult.cancelled === true) {
+      return;
+    }
+
+    setSelectedImage({ localUri: pickerResult.uri });
+    if (selectedImage !== null) {
+      return (
+        <View style={styles.container}>
+          <Image
+            source={{ uri: selectedImage.localUri }}
+            style={styles.thumbnail}
+          />
+        </View>
+      );
+    }
+  };
+
   return (
-    <View style={styles.container}>
-      <Appbar.Header style={styles.top}>
-        <Appbar.BackAction onPress={() => console.log('Went back')} />
-        <Appbar.Content />
-        <Appbar.Action
-          icon="magnify"
-          onPress={() => console.log('Searching')}
-        />
-        <Appbar.Action
-          icon="dots-vertical"
-          onPress={() => console.log('Shown more')}
-        />
-      </Appbar.Header>
-      <BottomNav />
-      <StatusBar style="auto" />
+    <View style={styles.contentContainer}>
+      <Text style={styles.instructions}>add an image of your results</Text>
+      <IconButton
+        icon="camera-plus"
+        color={Colors.cyan400}
+        size={30}
+        onPress={openImagePickerAsync}
+      />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -83,3 +103,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
 });
+
+export default ImagesRoute;
