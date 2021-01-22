@@ -20,16 +20,7 @@ const styles = StyleSheet.create({
     color: '#888',
     fontSize: 18,
     marginHorizontal: 15,
-  },
-  button: {
-    backgroundColor: 'blue',
-    padding: 20,
-    borderRadius: 5,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#fff',
-  },
+  }
 });
 
 export default TasksRoute;
