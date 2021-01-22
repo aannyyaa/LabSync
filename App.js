@@ -10,7 +10,7 @@ import BottomNav from './components/BottomNav';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Appbar.Header style={styles.top}>
+      {/* <Appbar.Header style={styles.top}>
         <Appbar.BackAction onPress={() => console.log('Went back')} />
         <Appbar.Content />
         <Appbar.Action
@@ -21,7 +21,7 @@ export default function App() {
           icon="dots-vertical"
           onPress={() => console.log('Shown more')}
         />
-      </Appbar.Header>
+      </Appbar.Header> */}
       <BottomNav />
       <StatusBar style="auto" />
     </View>
