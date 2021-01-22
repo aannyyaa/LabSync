@@ -13,7 +13,7 @@ import {
 const ImagesRoute = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
   let openImagePickerAsync = async () => {
-    let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
 
     if (permissionResult.granted === false) {
       alert('Permission to access camera roll is required!');
@@ -26,22 +26,30 @@ const ImagesRoute = () => {
       return;
     }
 
+    let imageSource
+
     setSelectedImage({ localUri: pickerResult.uri });
     if (selectedImage !== null) {
-      return (
-        <View style={styles.container}>
-          <Image
-            source={{ uri: selectedImage.localUri }}
-            style={styles.thumbnail}
-          />
-        </View>
-      );
+      // return (
+      //   <View style={styles.contentContainer}>
+      //     <Image
+      //       source={{ uri: selectedImage.localUri }}
+      //       style={styles.thumbnail}
+      //     />
+      //   </View>
+      // );
+      imageSource = { uri: selectedImage.localUri }
+
+      console.log('IMAGE');
     }
   };
 
   return (
     <View style={styles.contentContainer}>
-      <Text style={styles.instructions}>add an image of your results</Text>
+       {selectedImage !== null ?  (<Image
+            source={{ uri: selectedImage.localUri }}
+            style={styles.thumbnail}
+          /> ) : (<Text style={styles.instructions}>add an image of your results</Text>)}
       <IconButton
         icon="camera-plus"
         color={Colors.cyan400}
@@ -53,17 +61,10 @@ const ImagesRoute = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
   contentContainer: {
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  logo: {
-    width: 305,
-    height: 159,
-    marginBottom: 10,
   },
   instructions: {
     color: '#888',
