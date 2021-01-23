@@ -2,10 +2,10 @@ import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
-const SingleTask = () => {
+const SingleViewData = () => {
   return (
     <View>
-      <Text>TASK</Text>
+      <Text>DATA</Text>
     </View>
   );
 };
@@ -18,4 +18,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default SingleTask;
+export default SingleViewData;

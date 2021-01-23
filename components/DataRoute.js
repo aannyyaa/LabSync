@@ -1,59 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
 import { DataTable } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import SingleViewData from './SingleViewData'
+import AllData from './AllData'
+
+const Stack = createStackNavigator();
 
 const DataRoute = () => {
   return (
-    <DataTable>
-      <DataTable.Header>
-        <DataTable.Title>experiment</DataTable.Title>
-        <DataTable.Title numeric>date</DataTable.Title>
-      </DataTable.Header>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 1</DataTable.Cell>
-        <DataTable.Cell numeric>Jan 18, 2021</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 2</DataTable.Cell>
-        <DataTable.Cell numeric> Jan 1, 2021</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 4</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 5</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 6</DataTable.Cell>
-        <DataTable.Cell numeric> Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 7</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 8</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 9</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Row>
-        <DataTable.Cell>experiment 10</DataTable.Cell>
-        <DataTable.Cell numeric>Dec 15, 2020</DataTable.Cell>
-      </DataTable.Row>
-      <DataTable.Pagination
-        page={1}
-        numberOfPages={10}
-        onPageChange={page => console.log(page)}
-        label="1-10 of 100"
-      />
-    </DataTable>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="my experiments">
+        <Stack.Screen name="my experiments" component={AllData} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
+        <Stack.Screen name="single experiment" component={SingleViewData} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

@@ -20,8 +20,8 @@ const Stack = createStackNavigator();
 const TasksRoute = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="all tasks">
-        <Stack.Screen name="all tasks" component={AllTasks} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
+      <Stack.Navigator initialRouteName="my tasks">
+        <Stack.Screen name="my tasks" component={AllTasks} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
         <Stack.Screen name="single task" component={SingleTask} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
       </Stack.Navigator>
     </NavigationContainer>
