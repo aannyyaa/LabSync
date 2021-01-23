@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Checkbox, RadioButton } from 'react-native-paper';
 import tasks from '../db/tasks';
 
@@ -9,6 +9,7 @@ const AllTasks = ({ navigation }) => {
   const [value, setValue] = React.useState('first');
   return (
     <View>
+      <ScrollView>
       {tasks.map((task) => {
         return (
           <Checkbox.Item
@@ -19,6 +20,7 @@ const AllTasks = ({ navigation }) => {
           />
         );
       })}
+      </ScrollView>
     </View>
   );
 };

@@ -1,16 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { DataTable } from 'react-native-paper';
 
 const AllData = ({ navigation }) => {
-  let arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
+  let arr = [1, 2, 3, 5, 6, 7, 8, 9, 10, 11,12,13,14,15,16,17,18,19,20, 21, 22,23,24,25,26,27,28,29,30];
   return (
     <DataTable>
       <DataTable.Header>
         <DataTable.Title>experiment</DataTable.Title>
         <DataTable.Title numeric>date</DataTable.Title>
       </DataTable.Header>
+      <ScrollView>
       {arr.map((item) => {
         return (
           <DataTable.Row key={item}>
@@ -23,12 +24,7 @@ const AllData = ({ navigation }) => {
           </DataTable.Row>
         );
       })}
-      <DataTable.Pagination
-        page={1}
-        numberOfPages={10}
-        onPageChange={(page) => console.log(page)}
-        label="1-10 of 100"
-      />
+      </ScrollView>
     </DataTable>
   );
 };
