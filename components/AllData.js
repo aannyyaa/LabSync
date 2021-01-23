@@ -13,7 +13,7 @@ const AllData = ({ navigation }) => {
       </DataTable.Header>
       {arr.map((item) => {
         return (
-          <DataTable.Row>
+          <DataTable.Row key={item}>
             <DataTable.Cell
               onPress={() => navigation.navigate('single experiment')}
             >
