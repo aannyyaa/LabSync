@@ -9,11 +9,11 @@ const AllTasks = ({ navigation }) => {
   const [value, setValue] = React.useState('first');
   return (
     <View>
-      {tasks.map((task, idx) => {
+      {tasks.map((task) => {
         return (
           <Checkbox.Item
             key={task.id}
-            label={tasks[idx].title}
+            label={task.title}
             status="checked"
             onPress={() => navigation.navigate('single task')}
           />
