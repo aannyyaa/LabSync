@@ -3,7 +3,7 @@ import collaborators from './collaborators'
 const tasks = [
   {
     id: 1,
-    title: 'gel electrophoresis',
+    title: 'Gel Electrophoresis',
     description: '',
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
@@ -21,7 +21,7 @@ const tasks = [
   },
   {
     id: 3,
-    title: 'protein purification',
+    title: 'Protein Purification',
     description: '',
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
@@ -30,7 +30,7 @@ const tasks = [
   },
   {
     id: 4,
-    title: 'flow cytometry',
+    title: 'Flow Cytometry',
     description: '',
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
@@ -39,7 +39,7 @@ const tasks = [
   },
   {
     id: 5,
-    title: 'cell culture',
+    title: 'Cell Culture',
     description: '',
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
