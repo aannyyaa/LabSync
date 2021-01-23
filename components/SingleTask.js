@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { RadioButton } from 'react-native-paper';
 import tasks from '../db/tasks';
 
 const SingleTask = () => {
@@ -8,10 +9,13 @@ const SingleTask = () => {
   const collaborators = task.collaborators.map(
     (collaborator) => `${collaborator.first} ${collaborator.last}`
   );
+  const [checked, setChecked] = React.useState('unchecked');
 
+  const ToggleChecked = () =>
+    setChecked(checked === 'checked' ? 'unchecked' : 'checked');
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{task.title}</Text>
+        <Text style={styles.title}>{task.title}</Text>
       <Text
         style={styles.instructions}
       >{`Start date: ${task.startDate.toDateString()}`}</Text>
@@ -22,6 +26,7 @@ const SingleTask = () => {
       <Text style={styles.instructions}>{`Collaborators: ${collaborators.join(
         ', '
       )}`}</Text>
+      <RadioButton.Item label='Mark as complete' status={checked} onPress={ToggleChecked} />
     </View>
   );
 };
@@ -32,13 +37,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    marginHorizontal: 15,
-    marginBottom: '2%',
-    marginTop: '2%',
+    margin: '2%',
   },
   instructions: {
     fontSize: 15,
-    marginHorizontal: 15,
+    margin: '2%',
   },
 });
 
