@@ -59,16 +59,65 @@ const collaborators = [
     id: 9,
     first: 'Angela',
     last: 'Martin',
-    position: 'Undergraduate Student',
+    position: 'PhD Student',
     tasks: [],
   },
   {
     id: 10,
     first: 'Phyllis',
     last: 'Vance',
+    position: 'PhD Student',
+    tasks: [],
+  },
+  {
+    id: 11,
+    first: 'Creed',
+    last: 'Bratton',
     position: 'Undergraduate Student',
     tasks: [],
-  }
-]
+  },
+  {
+    id: 12,
+    first: 'Darryl',
+    last: 'Philbin',
+    position: 'PhD Student',
+    tasks: [],
+  },
+  {
+    id: 13,
+    first: 'Toby',
+    last: 'Flenderson',
+    position: 'Laboratory Technician',
+    tasks: [],
+  },
+  {
+    id: 14,
+    first: 'Erin',
+    last: 'Hannon',
+    position: 'PhD Student',
+    tasks: [],
+  },
+  {
+    id: 15,
+    first: 'Andy',
+    last: 'Bernard',
+    position: 'PhD Student',
+    tasks: [],
+  },
+  {
+    id: 16,
+    first: 'Ryan',
+    last: 'Howard',
+    position: 'Undergraduate Student',
+    tasks: [],
+  },
+  {
+    id: 17,
+    first: 'Meredith',
+    last: 'Palmer',
+    position: 'Undergraduate Student',
+    tasks: [],
+  },
+];
 
-export default collaborators
+export default collaborators;
