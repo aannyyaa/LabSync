@@ -5,12 +5,11 @@ import {
   Image,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import { Checkbox, RadioButton } from 'react-native-paper';
 
-const TasksRoute = ({ navigation }) => {
+const AllTasks = ({ navigation }) => {
   // const [checked, setChecked] = React.useState('first');
   const [value, setValue] = React.useState('first');
   return (
@@ -42,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TasksRoute;
+export default AllTasks;
