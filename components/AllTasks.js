@@ -8,14 +8,28 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { Checkbox } from 'react-native-paper';
+import { Checkbox, RadioButton } from 'react-native-paper';
 
 const TasksRoute = ({ navigation }) => {
+  // const [checked, setChecked] = React.useState('first');
+  const [value, setValue] = React.useState('first');
   return (
     <View>
-      <Checkbox.Item label="task 1" status="checked" onPress={() => navigation.navigate('single task')}/>
-      <Checkbox.Item label="task 2" status="indeterminate" onPress={() => navigation.navigate('single task')}/>
-      <Checkbox.Item label="task 3" status="indeterminate" onPress={() => navigation.navigate('single task')}/>
+      <Checkbox.Item
+        label="task 1"
+        status="checked"
+        onPress={() => navigation.navigate('single task')}
+      />
+      <Checkbox.Item
+        label="task 2"
+        status="indeterminate"
+        onPress={() => navigation.navigate('single task')}
+      />
+      <Checkbox.Item
+        label="task 3"
+        status="indeterminate"
+        onPress={() => navigation.navigate('single task')}
+      />
     </View>
   );
 };

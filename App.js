@@ -10,9 +10,10 @@ import BottomNav from './components/BottomNav';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <Appbar.Header style={styles.top}>
-        <Appbar.BackAction onPress={() => console.log('Went back')} />
-        <Appbar.Content />
+      <Appbar.Header style={styles.top} >
+      <Appbar.Content title="LabSync" />
+        {/* <Appbar.BackAction onPress={() => console.log('Went back')} />
+
         <Appbar.Action
           icon="magnify"
           onPress={() => console.log('Searching')}
@@ -20,8 +21,8 @@ export default function App() {
         <Appbar.Action
           icon="dots-vertical"
           onPress={() => console.log('Shown more')}
-        />
-      </Appbar.Header> */}
+        /> */}
+      </Appbar.Header>
       <BottomNav />
       <StatusBar style="auto" />
     </View>
