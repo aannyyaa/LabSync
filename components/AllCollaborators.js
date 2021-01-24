@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import {
   Avatar,
   Button,
@@ -11,9 +11,15 @@ import {
   Provider,
 } from 'react-native-paper';
 import collaborators from '../db/collaborators';
+import SingleCollaborator from './SingleCollaborator'
+
 
 const AllCollaborators = ({ navigation }) => {
   return (
+    <>
+    <TouchableOpacity>
+      
+    </TouchableOpacity>
     <View style={styles.collabContainer}>
       <ScrollView>
         <List.Section>
@@ -37,6 +43,7 @@ const AllCollaborators = ({ navigation }) => {
         </List.Section>
       </ScrollView>
     </View>
+    </>
   );
 };
 

@@ -4,17 +4,17 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { DataTable } from 'react-native-paper';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import SingleViewData from './SingleViewData'
-import AllData from './AllData'
+import SingleExperiment from './SingleExperiment'
+import AllExperiments from './AllExperiments'
 
 const Stack = createStackNavigator();
 
-const DataRoute = () => {
+const ExperimentsRoute = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="my experiments">
-        <Stack.Screen name="my experiments" component={AllData} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
-        <Stack.Screen name="single experiment" component={SingleViewData} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
+        <Stack.Screen name="my experiments" component={AllExperiments} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
+        <Stack.Screen name="single experiment" component={SingleExperiment} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DataRoute;
+export default ExperimentsRoute;

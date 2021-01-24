@@ -12,21 +12,21 @@ import {
 import TasksRoute from './TasksRoute'
 import ImagesRoute from './ImagesRoute'
 import CollaboratorsRoute from './CollaboratorsRoute'
-import DataRoute from './DataRoute'
+import ExperimentsRoute from './ExperimentsRoute'
 
 const BottomNav = () => {
   const [index, setIndex] = React.useState(0);
 
   const [routes] = React.useState([
     { key: 'tasks', title: 'tasks', icon: 'flask' },
-    { key: 'data', title: 'data', icon: 'folder' },
+    { key: 'experiments', title: 'experiments', icon: 'folder' },
     { key: 'images', title: 'images', icon: 'image' },
     { key: 'collaborators', title: 'collaborators', icon: 'account-multiple' },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
     tasks: TasksRoute,
-    data: DataRoute,
+    experiments: ExperimentsRoute,
     images: ImagesRoute,
     collaborators: CollaboratorsRoute,
   });
