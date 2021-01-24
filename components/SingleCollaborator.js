@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = ({ first, last , onPress, style}) => {
+const SingleCollaborator = ({ first, last, onPress, style, navigation }) => {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
       <Text>{`${first} ${last}`}</Text>
@@ -11,11 +11,13 @@ const SingleCollaborator = ({ first, last , onPress, style}) => {
   );
 };
 
-{/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" />
+{
+  /* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" />
       <Text
         style={styles.title}
       >{`${collaborator.first} ${collaborator.last}`}</Text>
-      <Text style={styles.instructions}>{`${collaborator.position}`}</Text> */}
+      <Text style={styles.instructions}>{`${collaborator.position}`}</Text> */
+}
 
 const styles = StyleSheet.create({
   container: {

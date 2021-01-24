@@ -21,17 +21,20 @@ import {
 import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 
-const AllCollaborators = () => {
+const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
-
+    
     return (
       <SingleCollaborator
         first={item.first}
         last={item.last}
-        onPress={() => setSelectedId(item.id)}
+        onPress={() => {
+          setSelectedId(item.id);
+          navigation.navigate('collaborator');
+        }}
         style={{ backgroundColor }}
       />
     );
