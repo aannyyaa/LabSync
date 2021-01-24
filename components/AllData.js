@@ -16,8 +16,8 @@ const AllData = ({ navigation }) => {
   return (
     <DataTable>
       <DataTable.Header>
-        <DataTable.Title>experiment</DataTable.Title>
-        <DataTable.Title numeric>date</DataTable.Title>
+        <DataTable.Title>Experiment</DataTable.Title>
+        <DataTable.Title numeric>Date</DataTable.Title>
       </DataTable.Header>
       <ScrollView>
         {data.map((experiment) => {
@@ -26,7 +26,7 @@ const AllData = ({ navigation }) => {
               <DataTable.Cell
                 onPress={() => navigation.navigate('single experiment')}
               >
-                {`experiment ${experiment.id}`}
+                {`Experiment ${experiment.id}`}
               </DataTable.Cell>
               <DataTable.Cell numeric>
                 {experiment.startDate.toLocaleDateString()}
