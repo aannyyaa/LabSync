@@ -3,10 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = ({ first , onPress, style}) => {
+const SingleCollaborator = ({ first, last , onPress, style}) => {
   return (
     <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
-      <Text>{first}</Text>
+      <Text>{`${first} ${last}`}</Text>
     </TouchableOpacity>
   );
 };

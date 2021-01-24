@@ -29,14 +29,13 @@ const AllCollaborators = () => {
 
     return (
       <SingleCollaborator
-        item={item}
+        first={item.first}
+        last={item.last}
         onPress={() => setSelectedId(item.id)}
         style={{ backgroundColor }}
       />
     );
   };
-
-  // const renderItem = ({ item }) => <SingleCollaborator first={item.first} />;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -44,6 +43,7 @@ const AllCollaborators = () => {
         data={collaborators}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
+        extraData={selectedId}
       />
     </SafeAreaView>
     // <>
