@@ -18,6 +18,7 @@ import {
   Portal,
   Provider,
 } from 'react-native-paper';
+import { withNavigation } from '@react-navigation/native';
 import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 
@@ -26,14 +27,14 @@ const AllCollaborators = ({ navigation }) => {
 
   const renderItem = ({ item }) => {
     const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
-    
+
     return (
       <SingleCollaborator
         first={item.first}
         last={item.last}
         onPress={() => {
           setSelectedId(item.id);
-          navigation.navigate('collaborator');
+          navigation.navigate('collaborator', { id: item.id });
         }}
         style={{ backgroundColor }}
       />
