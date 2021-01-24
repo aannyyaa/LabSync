@@ -1,34 +1,40 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { DataTable } from 'react-native-paper';
+import experiments from '../db/data';
+import data from '../db/data';
 
 const AllData = ({ navigation }) => {
-  let arr = [1, 2, 3, 5, 6, 7, 8, 9, 10];
   return (
     <DataTable>
       <DataTable.Header>
-        <DataTable.Title>experiment</DataTable.Title>
-        <DataTable.Title numeric>date</DataTable.Title>
+        <DataTable.Title>Experiment</DataTable.Title>
+        <DataTable.Title numeric>Date</DataTable.Title>
       </DataTable.Header>
-      {arr.map((item) => {
-        return (
-          <DataTable.Row>
-            <DataTable.Cell
-              onPress={() => navigation.navigate('single experiment')}
-            >
-              {`experiment ${item}`}
-            </DataTable.Cell>
-            <DataTable.Cell numeric>Jan 1, 2021</DataTable.Cell>
-          </DataTable.Row>
-        );
-      })}
-      <DataTable.Pagination
-        page={1}
-        numberOfPages={10}
-        onPageChange={(page) => console.log(page)}
-        label="1-10 of 100"
-      />
+      <ScrollView>
+        {data.map((experiment) => {
+          return (
+            <DataTable.Row key={experiment.id}>
+              <DataTable.Cell
+                onPress={() => navigation.navigate('single experiment')}
+              >
+                {`Experiment ${experiment.id}`}
+              </DataTable.Cell>
+              <DataTable.Cell numeric>
+                {experiment.startDate.toLocaleDateString()}
+              </DataTable.Cell>
+            </DataTable.Row>
+          );
+        })}
+      </ScrollView>
     </DataTable>
   );
 };

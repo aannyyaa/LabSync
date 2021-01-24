@@ -1,34 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import {
-  Button,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Checkbox, RadioButton } from 'react-native-paper';
+import tasks from '../db/tasks';
 
 const AllTasks = ({ navigation }) => {
   // const [checked, setChecked] = React.useState('first');
   const [value, setValue] = React.useState('first');
   return (
     <View>
-      <Checkbox.Item
-        label="task 1"
-        status="checked"
-        onPress={() => navigation.navigate('single task')}
-      />
-      <Checkbox.Item
-        label="task 2"
-        status="indeterminate"
-        onPress={() => navigation.navigate('single task')}
-      />
-      <Checkbox.Item
-        label="task 3"
-        status="indeterminate"
-        onPress={() => navigation.navigate('single task')}
-      />
+      <ScrollView>
+      {tasks.map((task) => {
+        return (
+          <Checkbox.Item
+            key={task.id}
+            label={task.title}
+            status="checked"
+            onPress={() => navigation.navigate('single task')}
+          />
+        );
+      })}
+      </ScrollView>
     </View>
   );
 };
