@@ -18,10 +18,10 @@ const SingleTask = () => {
         <Text style={styles.title}>{task.title}</Text>
       <Text
         style={styles.instructions}
-      >{`Start date: ${task.startDate.toDateString()}`}</Text>
+      >{`Start date: ${task.startDate.toLocaleDateString()}`}</Text>
       <Text
         style={styles.instructions}
-      >{`Deadline: ${task.deadline.toDateString()}`}</Text>
+      >{`Deadline: ${task.deadline.toLocaleDateString()}`}</Text>
       <Text style={styles.instructions}>{`Created by: ${creator}`}</Text>
       <Text style={styles.instructions}>{`Collaborators: ${collaborators.join(
         ', '

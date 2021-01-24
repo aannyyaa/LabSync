@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = () => {
+const SingleCollaborator = (props) => {
   const collaborator = collaborators[0];
 
   return (

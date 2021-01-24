@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { DataTable } from 'react-native-paper';
+import experiments from '../db/data';
+import data from '../db/data';
 
 const AllData = ({ navigation }) => {
-  let arr = [1, 2, 3, 5, 6, 7, 8, 9, 10, 11,12,13,14,15,16,17,18,19,20, 21, 22,23,24,25,26,27,28,29,30];
   return (
     <DataTable>
       <DataTable.Header>
@@ -12,18 +20,20 @@ const AllData = ({ navigation }) => {
         <DataTable.Title numeric>date</DataTable.Title>
       </DataTable.Header>
       <ScrollView>
-      {arr.map((item) => {
-        return (
-          <DataTable.Row key={item}>
-            <DataTable.Cell
-              onPress={() => navigation.navigate('single experiment')}
-            >
-              {`experiment ${item}`}
-            </DataTable.Cell>
-            <DataTable.Cell numeric>Jan 1, 2021</DataTable.Cell>
-          </DataTable.Row>
-        );
-      })}
+        {data.map((experiment) => {
+          return (
+            <DataTable.Row key={experiment.id}>
+              <DataTable.Cell
+                onPress={() => navigation.navigate('single experiment')}
+              >
+                {`experiment ${experiment.id}`}
+              </DataTable.Cell>
+              <DataTable.Cell numeric>
+                {experiment.startDate.toLocaleDateString()}
+              </DataTable.Cell>
+            </DataTable.Row>
+          );
+        })}
       </ScrollView>
     </DataTable>
   );

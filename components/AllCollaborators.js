@@ -13,18 +13,12 @@ import {
 import collaborators from '../db/collaborators';
 
 const AllCollaborators = ({ navigation }) => {
-  const [visible, setVisible] = React.useState(false);
-
-  const showModal = () => setVisible(true);
-  const hideModal = () => setVisible(false);
-  const containerStyle = { backgroundColor: 'white', padding: 20 };
   return (
     <View style={styles.collabContainer}>
       <ScrollView>
         <List.Section>
           {collaborators.map((collaborator) => {
             return (
-              <>
                 <List.Item
                   key={collaborator.id}
                   title={`${collaborator.first} ${collaborator.last}`}
@@ -38,21 +32,6 @@ const AllCollaborators = ({ navigation }) => {
                     />
                   )}
                 />
-                <Provider>
-                  <Portal>
-                    <Modal
-                      visible={visible}
-                      onDismiss={hideModal}
-                      contentContainerStyle={containerStyle}
-                    >
-                      <Text
-                        style={styles.title}
-                      >{`${collaborator.first} ${collaborator.last}`}</Text>
-                    </Modal>
-                  </Portal>
-                  <Button onPress={showModal}>view</Button>
-                </Provider>
-              </>
             );
           })}
         </List.Section>
