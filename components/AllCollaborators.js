@@ -19,7 +19,6 @@ import {
   Provider,
 } from 'react-native-paper';
 import collaborators from '../db/collaborators';
-import { withNavigation } from '@react-navigation/compat';
 
 const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -68,4 +67,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default withNavigation(AllCollaborators);
+export default AllCollaborators;
