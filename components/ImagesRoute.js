@@ -89,12 +89,7 @@ const styles = StyleSheet.create({
   card: {
     minWidth: 300,
     margin: 10,
-    marginBottom: 50,
-  },
-  image: {
-    width: '90%',
-    height: 250,
-    marginLeft: '5%',
+    marginBottom: 25,
   },
 });
 

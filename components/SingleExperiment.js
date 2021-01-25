@@ -1,13 +1,31 @@
 import * as React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { DataTable } from 'react-native-paper';
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { Card, DataTable, Title } from 'react-native-paper';
 import experiments from '../db/experiments';
+import images from '../db/images';
 
 const SingleViewData = () => {
+  const renderItem = ({ item }) => {
+    return (
+      <Card style={styles.card}>
+        <Card.Content>
+          <Title>{item.title}</Title>
+        </Card.Content>
+        <Card.Cover source={{ uri: item.uri }} />
+      </Card>
+    );
+  };
   const experiment = experiments[0];
   return (
-    <ScrollView>
-      <Text>{experiment.title}</Text>
+    <ScrollView style={styles.background}>
+      <Title>{experiment.title}</Title>
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>{experiment.sampleHeader}</DataTable.Title>
@@ -26,24 +44,30 @@ const SingleViewData = () => {
           <DataTable.Cell numeric>{experiment.results[2]}</DataTable.Cell>
         </DataTable.Row>
       </DataTable>
-      <Text>Images</Text>
-      <Image source={{ uri: experiment.images[0] }} style={styles.image} />
-      <Image source={{ uri: experiment.images[1] }} style={styles.image} />
-      <Image source={{ uri: experiment.images[2] }} style={styles.image} />
+      <Title>Images</Title>
+      <FlatList
+        horizontal
+        data={images}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#fff',
+  },
   instructions: {
     color: '#888',
     fontSize: 18,
     marginHorizontal: 15,
   },
-  image: {
-    width: 400,
-    height: 250,
-    margin: '3%',
+  card: {
+    minWidth: 300,
+    margin: 10,
+    marginBottom: 25,
   },
 });
 

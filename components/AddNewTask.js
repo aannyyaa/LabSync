@@ -9,16 +9,19 @@ const AddNewTask = () => {
   return (
     <View style={styles.container}>
       <TextInput
+        style={styles.input}
         label="Task Title"
         value={title}
         onChangeText={(title) => setTitle(title)}
       />
       <TextInput
+        style={styles.input}
         label="Deadline"
         value={deadline}
         onChangeText={(deadline) => setDeadline(deadline)}
       />
       <TextInput
+        style={styles.input}
         label="Collaborators"
         value={collaborators}
         onChangeText={(collaborators) => setCollaborators(collaborators)}
@@ -37,15 +40,13 @@ const AddNewTask = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    margin: '2%',
-    flex: 1,
-    justifyContent: 'space-evenly',
-  },
   button: {
     width: '33%',
     margin: '5%',
     marginLeft: '33%',
+  },
+  input: {
+    margin: 20,
   },
 });
 

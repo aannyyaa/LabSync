@@ -13,7 +13,7 @@ import experiments from '../db/experiments';
 
 const AllData = ({ navigation }) => {
   return (
-    <ScrollView>
+    <ScrollView style={styles.background}>
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>Experiment</DataTable.Title>
@@ -46,6 +46,9 @@ const AllData = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#fff',
+  },
   instructions: {
     color: '#888',
     fontSize: 18,

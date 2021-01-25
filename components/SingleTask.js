@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Chip, RadioButton } from 'react-native-paper';
+import { Chip, RadioButton, Title } from 'react-native-paper';
 
 const SingleTask = ({ route }) => {
   const {
@@ -25,7 +25,7 @@ const SingleTask = ({ route }) => {
     setChecked(checked === 'checked' ? 'unchecked' : 'checked');
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Title style={styles.title}>{title}</Title>
       <Text style={styles.instructions}>{`Start date: ${startDate}`}</Text>
       <Text style={styles.instructions}>{`Deadline: ${deadline}`}</Text>
       <Text style={styles.instructions}>{`Collaborators:`}</Text>
@@ -43,15 +43,15 @@ const SingleTask = ({ route }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 18,
-    margin: '2%',
+    margin: 10,
   },
   instructions: {
     fontSize: 15,
-    margin: '2%',
+    margin: 10,
   },
   chip: {
-    width: "37%"
+    width: "37%",
+    margin: 10,
   }
 });
 
