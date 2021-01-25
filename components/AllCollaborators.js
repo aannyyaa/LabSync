@@ -31,9 +31,9 @@ const AllCollaborators = ({ navigation }) => {
         last={item.last}
         onPress={() => {
           setSelectedId(item.id);
-          navigation.navigate('all', {
-            screen: 'collaborator',
-            params: {id: item.id}
+          navigation.navigate('collaborator', {
+            screen: 'all',
+            params: { id: item.id },
           });
         }}
       />
