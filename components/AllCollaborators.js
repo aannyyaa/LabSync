@@ -22,7 +22,6 @@ import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 import { withNavigation } from '@react-navigation/compat';
 
-
 const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
@@ -33,10 +32,15 @@ const AllCollaborators = ({ navigation }) => {
         last={item.last}
         onPress={() => {
           setSelectedId(item.id);
+          // navigation.navigate('collaborator', {
+          //   screen: 'collaborator',
+          //   initial: false,
+          //   params: { id: item.id, first: item.first, last: item.last },
+          // });
           navigation.navigate('collaborator', {
-            screen: 'collaborator',
-            initial: false,
-            params: { id: item.id },
+            id: item.id,
+            first: item.first,
+            last: item.last,
           });
         }}
       />

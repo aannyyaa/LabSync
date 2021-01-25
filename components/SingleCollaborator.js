@@ -14,7 +14,7 @@ const SingleCollaborator = ({
   // const id = navigation.getParam('id')
   // const { id, first, last } = route.params;
   // const { id } = route.params;
-  // console.log(route.params.id);
+  // console.log(route.);
   console.log(route);
   return (
     <TouchableOpacity onPress={onPress} style={[styles.title, style]}>
