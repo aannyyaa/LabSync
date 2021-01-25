@@ -37,7 +37,11 @@ const AllCollaborators = ({ navigation }) => {
           });
         }}
       >
-        <Text>{`${item.first} ${item.last}`}</Text>
+        <List.Item
+        title={`${item.first} ${item.last}`}
+        description={item.position}
+        left={props => <List.Icon {...props} color={Colors.cyan400} icon="account" />}
+        />
       </TouchableOpacity>
     );
   };
@@ -55,21 +59,14 @@ const AllCollaborators = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  collabContainer: {
-    fontSize: 18,
-    margin: '2%',
-  },
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    fontSize: 18,
-    margin: '2%',
   },
   title: {
-    fontSize: 32,
+    fontSize: 15,
+    margin: '2%',
   },
+
 });
 
 export default withNavigation(AllCollaborators);
