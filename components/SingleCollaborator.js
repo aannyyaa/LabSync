@@ -6,6 +6,7 @@ import collaborators from '../db/collaborators';
 const SingleCollaborator = ({ route }) => {
   const { id, first, last, position, tasks } = route.params;
   console.log(route);
+  // setCollab()
   return (
     <TouchableOpacity style={styles.container}>
       <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" />

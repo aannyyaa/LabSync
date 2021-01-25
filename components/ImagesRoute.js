@@ -1,6 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import {
   Appbar,
@@ -9,6 +16,7 @@ import {
   Colors,
   IconButton,
 } from 'react-native-paper';
+import images from '../db/images';
 
 const ImagesRoute = () => {
   const [selectedImage, setSelectedImage] = React.useState(null);
@@ -26,12 +34,11 @@ const ImagesRoute = () => {
       return;
     }
 
-    let imageSource
+    let imageSource;
 
     setSelectedImage({ localUri: pickerResult.uri });
     if (selectedImage !== null) {
-
-      imageSource = { uri: selectedImage.localUri }
+      imageSource = { uri: selectedImage.localUri };
 
       console.log('IMAGE');
     }
@@ -39,10 +46,25 @@ const ImagesRoute = () => {
 
   return (
     <View style={styles.contentContainer}>
-       {selectedImage !== null ?  (<Image
-            source={{ uri: selectedImage.localUri }}
-            style={styles.thumbnail}
-          /> ) : (<Text style={styles.instructions}>add an image of your results</Text>)}
+      <View style={styles.imageContainer}>
+        {images.map((image) => {
+          return (
+            <Image
+              key={image.id}
+              source={{ uri: image.uri }}
+              style={styles.image}
+            />
+          );
+        })}
+      </View>
+      {selectedImage !== null ? (
+        <Image
+          source={{ uri: selectedImage.localUri }}
+          style={styles.thumbnail}
+        />
+      ) : (
+        <Text style={styles.instructions}>add an image of your results</Text>
+      )}
       <IconButton
         icon="camera-plus"
         color={Colors.cyan400}
@@ -64,37 +86,18 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginHorizontal: 15,
   },
-  button: {
-    backgroundColor: 'blue',
-    padding: 20,
-    borderRadius: 5,
+  image: {
+    width: 100,
+    height: 100,
+    marginBottom: '3%',
+    borderColor: 'black',
+    borderWidth: 1,
   },
-  buttonText: {
-    fontSize: 20,
-    color: '#fff',
-  },
-  thumbnail: {
-    width: 300,
-    height: 300,
-    resizeMode: 'contain',
-  },
-  bottom: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
-  top: {
-    left: 0,
-    right: 0,
-  },
-  accountsContainer: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-  accounts: {
-    flex: 1,
+  imageContainer: {
+    flex: 0,
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
   },
 });
 
