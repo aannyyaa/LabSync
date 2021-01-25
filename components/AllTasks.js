@@ -4,9 +4,16 @@ import {
   SafeAreaView,
   StyleSheet,
   TouchableOpacity,
-  View
+  View,
 } from 'react-native';
-import { Button, Checkbox, Colors, List, RadioButton } from 'react-native-paper';
+import { ScrollView } from 'react-native-gesture-handler';
+import {
+  Button,
+  Checkbox,
+  Colors,
+  List,
+  RadioButton,
+} from 'react-native-paper';
 import collaborators from '../db/collaborators';
 import tasks from '../db/tasks';
 
@@ -39,15 +46,25 @@ const AllTasks = ({ navigation }) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={tasks}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        extraData={selectedId}
-      />
-      <Button icon="flask-plus" mode="contained" color={Colors.cyan400} style={styles.button} onPress={()=>navigation.navigate("new task")}>Add</Button>
-    </SafeAreaView>
+    <View style={styles.background}>
+      <SafeAreaView >
+        <FlatList
+          data={tasks}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          extraData={selectedId}
+        />
+        <Button
+          icon="flask-plus"
+          mode="contained"
+          color={Colors.cyan400}
+          style={styles.button}
+          onPress={() => navigation.navigate('new task')}
+        >
+          Add
+        </Button>
+      </SafeAreaView>
+    </View>
   );
 };
 
@@ -59,8 +76,12 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '33%',
-    margin: "5%",
-    marginLeft: '33%'
+    margin: '5%',
+    marginLeft: '33%',
+  },
+  background: {
+    backgroundColor: '#fff',
+    height: "100%"
   },
 });
 

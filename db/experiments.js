@@ -3,11 +3,17 @@ import images from './images';
 const experiments = [
   {
     id: 1,
-    title: 'Experiment',
-    description: 'Gel Electrophoresis',
+    title: 'Gel Electrophoresis',
+    description: 'Ran the gel at 90V for 60 minutes',
     startDate: new Date().toLocaleDateString(),
-    samples: ['A', 'B', 'C'],
+    samples: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
     results: [
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),

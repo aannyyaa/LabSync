@@ -24,13 +24,23 @@ const SingleTask = ({ route }) => {
   const ToggleChecked = () =>
     setChecked(checked === 'checked' ? 'unchecked' : 'checked');
   return (
-    <View style={styles.container}>
+    <View style={styles.background}>
       <Title style={styles.title}>{title}</Title>
       <Text style={styles.instructions}>{`Start date: ${startDate}`}</Text>
       <Text style={styles.instructions}>{`Deadline: ${deadline}`}</Text>
       <Text style={styles.instructions}>{`Collaborators:`}</Text>
-      {allCollaborators.map(collaborator => {
-        return <Chip style={styles.chip} key={collaborator} type="outlined" icon="account" onPress={() => console.log('Pressed')}>{collaborator}</Chip>
+      {allCollaborators.map((collaborator) => {
+        return (
+          <Chip
+            style={styles.chip}
+            key={collaborator}
+            type="outlined"
+            icon="account"
+            onPress={() => console.log('Pressed')}
+          >
+            {collaborator}
+          </Chip>
+        );
       })}
       <RadioButton.Item
         label="Mark as complete"
@@ -50,9 +60,13 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   chip: {
-    width: "37%",
+    width: '37%',
     margin: 10,
-  }
+  },
+  background: {
+    backgroundColor: '#fff',
+    height: '100%',
+  },
 });
 
 export default SingleTask;
