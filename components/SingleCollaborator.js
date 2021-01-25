@@ -3,8 +3,18 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = ({ first, last, onPress, style, navigation }) => {
+const SingleCollaborator = ({
+  first,
+  last,
+  onPress,
+  style,
+  route,
+  navigation,
+}) => {
   // const id = navigation.getParam('id')
+  // const { id, first, last } = route.params;
+  const { id } = route.params;
+  console.log(route);
   return (
     <TouchableOpacity onPress={onPress} style={[styles.instructions, style]}>
       {/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" /> */}

@@ -18,7 +18,6 @@ import {
   Portal,
   Provider,
 } from 'react-native-paper';
-import { withNavigation } from '@react-navigation/compat';
 import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 
@@ -32,10 +31,9 @@ const AllCollaborators = ({ navigation }) => {
         last={item.last}
         onPress={() => {
           setSelectedId(item.id);
-          navigation.navigate('collaborator', {
-            id: item.id,
-            first: item.first,
-            last: item.last,
+          navigation.navigate('all', {
+            screen: 'collaborator',
+            params: {id: item.id}
           });
         }}
       />
@@ -97,4 +95,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withNavigation(AllCollaborators);
+export default AllCollaborators;
