@@ -22,6 +22,7 @@ import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 import { withNavigation } from '@react-navigation/compat';
 
+
 const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
