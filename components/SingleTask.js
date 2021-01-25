@@ -1,7 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import tasks from '../db/tasks';
 
 const SingleTask = ({ route }) => {
   const {
