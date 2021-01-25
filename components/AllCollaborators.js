@@ -32,10 +32,12 @@ const AllCollaborators = ({ navigation }) => {
             id: item.id,
             first: item.first,
             last: item.last,
+            position: item.position,
+            tasks: item.tasks
           });
         }}
       >
-        <Text>{item.first}</Text>
+        <Text>{`${item.first} ${item.last}`}</Text>
       </TouchableOpacity>
     );
   };
@@ -49,32 +51,6 @@ const AllCollaborators = ({ navigation }) => {
         extraData={selectedId}
       />
     </SafeAreaView>
-    // <>
-    //   <TouchableOpacity></TouchableOpacity>
-    //   <View style={styles.collabContainer}>
-    //     <ScrollView>
-    //       <List.Section>
-    //         {collaborators.map((collaborator) => {
-    //           return (
-    //             <List.Item
-    //               key={collaborator.id}
-    //               title={`${collaborator.first} ${collaborator.last}`}
-    //               description={`${collaborator.position}`}
-    //               onPress={() => navigation.navigate('collaborator')}
-    //               left={(props) => (
-    //                 <List.Icon
-    //                   {...props}
-    //                   color={Colors.cyan400}
-    //                   icon="account"
-    //                 />
-    //               )}
-    //             />
-    //           );
-    //         })}
-    //       </List.Section>
-    //     </ScrollView>
-    //   </View>
-    // </>
   );
 };
 
