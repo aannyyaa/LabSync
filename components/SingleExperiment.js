@@ -26,7 +26,7 @@ const SingleViewData = () => {
           <DataTable.Cell numeric>{experiment.results[2]}</DataTable.Cell>
         </DataTable.Row>
       </DataTable>
-      <Text>Images:</Text>
+      <Text>Images</Text>
       <Image source={{ uri: experiment.images[0] }} style={styles.image} />
       <Image source={{ uri: experiment.images[1] }} style={styles.image} />
       <Image source={{ uri: experiment.images[2] }} style={styles.image} />

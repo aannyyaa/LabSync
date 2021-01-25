@@ -28,7 +28,7 @@ const AllData = ({ navigation }) => {
                 {`Experiment ${experiment.id}`}
               </DataTable.Cell>
               <DataTable.Cell numeric>
-                {experiment.startDate.toLocaleDateString()}
+                {experiment.startDate}
               </DataTable.Cell>
             </DataTable.Row>
           );
