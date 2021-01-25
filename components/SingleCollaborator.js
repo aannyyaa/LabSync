@@ -4,12 +4,10 @@ import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
 const SingleCollaborator = ({ first, last, onPress, style, navigation }) => {
-  // const id = navigation.getParam('id');
-
-  // console.log(id);
-
+  // const id = navigation.getParam('id')
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.item, style]}>
+    <TouchableOpacity onPress={onPress} style={[styles.instructions, style]}>
+      {/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" /> */}
       <Text>{`${first} ${last}`}</Text>
     </TouchableOpacity>
   );

@@ -18,7 +18,7 @@ import {
   Portal,
   Provider,
 } from 'react-native-paper';
-import { withNavigation } from '@react-navigation/native';
+import { withNavigation } from '@react-navigation/compat';
 import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
 
@@ -26,17 +26,18 @@ const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
 
   const renderItem = ({ item }) => {
-    const backgroundColor = item.id === selectedId ? '#6e3b6e' : '#f9c2ff';
-
     return (
       <SingleCollaborator
         first={item.first}
         last={item.last}
         onPress={() => {
           setSelectedId(item.id);
-          navigation.navigate('collaborator', { id: item.id });
+          navigation.navigate('collaborator', {
+            id: item.id,
+            first: item.first,
+            last: item.last,
+          });
         }}
-        style={{ backgroundColor }}
       />
     );
   };
@@ -88,14 +89,12 @@ const styles = StyleSheet.create({
     marginTop: StatusBar.currentHeight || 0,
   },
   item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
+    fontSize: 18,
+    margin: '2%',
   },
   title: {
     fontSize: 32,
   },
 });
 
-export default AllCollaborators;
+export default withNavigation(AllCollaborators);
