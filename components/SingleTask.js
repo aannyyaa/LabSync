@@ -32,7 +32,9 @@ const SingleTask = ({ route }) => {
       <Text
         style={styles.instructions}
       >{`Created by: ${creator.first} ${creator.last}`}</Text>
-      <Text style={styles.instructions}>{`Collaborators: ${allCollaboratorsStr}`}</Text>
+      <Text
+        style={styles.instructions}
+      >{`Collaborators: me, ${allCollaboratorsStr}`}</Text>
       <RadioButton.Item
         label="Mark as complete"
         status={checked}
