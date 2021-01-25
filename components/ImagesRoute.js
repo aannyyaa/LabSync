@@ -40,32 +40,28 @@ const ImagesRoute = () => {
 
   return (
     <View style={styles.contentContainer}>
-      <View style={styles.imageContainer}>
-        {images.map((image) => {
-          return (
-            <Image
-              key={image.id}
-              source={{ uri: image.uri }}
-              style={styles.image}
-            />
-          );
-        })}
-      </View>
       {selectedImage !== null ? (
-        <Image
-          source={{ uri: selectedImage.localUri }}
-          style={styles.thumbnail}
-        />
+        <Image source={{ uri: selectedImage.localUri }} style={styles.image} />
       ) : (
-        <Text ></Text>
+        <View style={styles.imageContainer}>
+          {images.map((image) => {
+            return (
+              <Image
+                key={image.id}
+                source={{ uri: image.uri }}
+                style={styles.image}
+              />
+            );
+          })}
+        </View>
       )}
-      <Button
+      <Button style={styles.button}
         mode="contained"
         icon="camera-plus"
         color={Colors.cyan400}
         onPress={openImagePickerAsync}
       >
-        Add Image
+        Add
       </Button>
     </View>
   );
@@ -95,6 +91,9 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
   },
+  button: {
+    width: "33%"
+  }
 });
 
 export default ImagesRoute;

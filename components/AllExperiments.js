@@ -8,17 +8,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { DataTable } from 'react-native-paper';
+import { Button, Colors, DataTable } from 'react-native-paper';
 import experiments from '../db/experiments';
 
 const AllData = ({ navigation }) => {
   return (
-    <DataTable>
-      <DataTable.Header>
-        <DataTable.Title>Experiment</DataTable.Title>
-        <DataTable.Title numeric>Date</DataTable.Title>
-      </DataTable.Header>
-      <ScrollView>
+    <ScrollView>
+      <DataTable>
+        <DataTable.Header>
+          <DataTable.Title>Experiment</DataTable.Title>
+          <DataTable.Title numeric>Date</DataTable.Title>
+        </DataTable.Header>
         {experiments.map((experiment) => {
           return (
             <DataTable.Row key={experiment.id}>
@@ -27,14 +27,21 @@ const AllData = ({ navigation }) => {
               >
                 {`Experiment ${experiment.id}`}
               </DataTable.Cell>
-              <DataTable.Cell numeric>
-                {experiment.startDate}
-              </DataTable.Cell>
+              <DataTable.Cell numeric>{experiment.startDate}</DataTable.Cell>
             </DataTable.Row>
           );
         })}
-      </ScrollView>
-    </DataTable>
+      </DataTable>
+      <Button
+        icon="folder-plus"
+        mode="contained"
+        color={Colors.cyan400}
+        style={styles.button}
+        onPress={() => console.log('new experiment')}
+      >
+        Add
+      </Button>
+    </ScrollView>
   );
 };
 
@@ -45,13 +52,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   button: {
-    backgroundColor: 'blue',
-    padding: 20,
-    borderRadius: 5,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#fff',
+    width: '33%',
+    margin: "5%",
+    marginLeft: '33%'
   },
 });
 

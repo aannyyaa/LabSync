@@ -46,7 +46,7 @@ const AllTasks = ({ navigation }) => {
         keyExtractor={(item) => item.id}
         extraData={selectedId}
       />
-      <Button icon="flask-plus" mode="contained" color={Colors.cyan400} style={styles.button} onPress={()=>navigation.navigate("new task")}>Add Task</Button>
+      <Button icon="flask-plus" mode="contained" color={Colors.cyan400} style={styles.button} onPress={()=>navigation.navigate("new task")}>Add</Button>
     </SafeAreaView>
   );
 };
@@ -58,7 +58,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   button: {
-    width: "30%"
+    width: '33%',
+    margin: "5%",
+    marginLeft: '33%'
   },
 });
 
