@@ -3,19 +3,19 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = ({
-  first,
-  last,
-  onPress,
-  style,
-  route,
-  navigation,
-}) => {
-  const [collab, setCollab] = useState(null)
+const SingleCollaborator = ({ onPress, style, route, navigation }) => {
+  const [collab, setCollab] = useState(null);
   // const id = navigation.getParam('id')
+
   // const { id, first, last } = route.params;
-  // const { id } = route.params;
-  // console.log(route.);
+
+  const { id, first, last } = route.params;
+
+  // if (route.params.id === id) {
+  //   // const { id } = route.params;
+  //   console.log(id)
+  // }
+
   console.log(route);
   // setCollab()
   return (

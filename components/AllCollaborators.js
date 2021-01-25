@@ -19,7 +19,6 @@ import {
   Provider,
 } from 'react-native-paper';
 import collaborators from '../db/collaborators';
-import SingleCollaborator from './SingleCollaborator';
 import { withNavigation } from '@react-navigation/compat';
 
 const AllCollaborators = ({ navigation }) => {
@@ -27,18 +26,17 @@ const AllCollaborators = ({ navigation }) => {
 
   const renderItem = ({ item }) => {
     return (
-      <SingleCollaborator
-        first={item.first}
-        last={item.last}
+      <TouchableOpacity
         onPress={() => {
-          setSelectedId(item.id);
           navigation.navigate('collaborator', {
             id: item.id,
             first: item.first,
             last: item.last,
           });
         }}
-      />
+      >
+        <Text>{item.first}</Text>
+      </TouchableOpacity>
     );
   };
 
