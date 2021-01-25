@@ -9,13 +9,7 @@ import {
   View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {
-  Appbar,
-  Avatar,
-  BottomNavigation,
-  Colors,
-  IconButton,
-} from 'react-native-paper';
+import { Button, Colors, IconButton } from 'react-native-paper';
 import images from '../db/images';
 
 const ImagesRoute = () => {
@@ -63,14 +57,16 @@ const ImagesRoute = () => {
           style={styles.thumbnail}
         />
       ) : (
-        <Text style={styles.instructions}>add an image of your results</Text>
+        <Text ></Text>
       )}
-      <IconButton
+      <Button
+        mode="contained"
         icon="camera-plus"
         color={Colors.cyan400}
-        size={30}
         onPress={openImagePickerAsync}
-      />
+      >
+        Add Image
+      </Button>
     </View>
   );
 };

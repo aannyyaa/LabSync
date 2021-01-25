@@ -16,7 +16,7 @@ const AddNewTask = () => {
       <TextInput
         label="Deadline"
         value={deadline}
-        onChangeText={(deadline) => setCollaborators(deadline)}
+        onChangeText={(deadline) => setDeadline(deadline)}
       />
       <TextInput
         label="Collaborators"
