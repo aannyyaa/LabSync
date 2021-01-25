@@ -2,26 +2,14 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import {
-  Appbar,
-} from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 import BottomNav from './components/BottomNav';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Appbar.Header style={styles.top} >
-      <Appbar.Content title="LabSync" />
-        {/* <Appbar.BackAction onPress={() => console.log('Went back')} />
-
-        <Appbar.Action
-          icon="magnify"
-          onPress={() => console.log('Searching')}
-        />
-        <Appbar.Action
-          icon="dots-vertical"
-          onPress={() => console.log('Shown more')}
-        /> */}
+      <Appbar.Header style={styles.top}>
+        <Appbar.Content title="LabSync" />
       </Appbar.Header>
       <BottomNav />
       <StatusBar style="auto" />
