@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {
+  FlatList,
   Image,
   ScrollView,
   StyleSheet,
@@ -9,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import { Button, Colors, IconButton } from 'react-native-paper';
+import { Button, Card, Colors, Title } from 'react-native-paper';
 import images from '../db/images';
 
 const ImagesRoute = () => {
@@ -38,24 +39,37 @@ const ImagesRoute = () => {
     }
   };
 
+  const renderItem = ({ item }) => {
+    return (
+      <Card style={styles.card}>
+        <Card.Content>
+          <Title>{item.title}</Title>
+        </Card.Content>
+        <Card.Cover source={{ uri: item.uri }} />
+      </Card>
+    );
+  };
+
   return (
-    <View style={styles.contentContainer}>
+    <View style={styles.container}>
+      <FlatList
+        horizontal
+        data={images}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
       {selectedImage !== null ? (
-        <Image source={{ uri: selectedImage.localUri }} style={styles.image} />
+        <Card style={styles.card}>
+          <Card.Content>
+            <Title>New Image</Title>
+          </Card.Content>
+          <Card.Cover source={{ uri: selectedImage.localUri }} />
+        </Card>
       ) : (
-        <View style={styles.imageContainer}>
-          {images.map((image) => {
-            return (
-              <Image
-                key={image.id}
-                source={{ uri: image.uri }}
-                style={styles.image}
-              />
-            );
-          })}
-        </View>
+        <Text></Text>
       )}
-      <Button style={styles.button}
+      <Button
+        style={styles.button}
         mode="contained"
         icon="camera-plus"
         color={Colors.cyan400}
@@ -68,32 +82,20 @@ const ImagesRoute = () => {
 };
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+  button: {
+    width: '33%',
+    marginLeft: '33%',
   },
-  instructions: {
-    color: '#888',
-    fontSize: 18,
-    marginHorizontal: 15,
+  card: {
+    minWidth: 300,
+    margin: 10,
+    marginBottom: 50,
   },
   image: {
-    width: 100,
-    height: 100,
-    marginBottom: '3%',
-    borderColor: 'black',
-    borderWidth: 1,
+    width: '90%',
+    height: 250,
+    marginLeft: '5%',
   },
-  imageContainer: {
-    flex: 0,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
-  },
-  button: {
-    width: "33%"
-  }
 });
 
 export default ImagesRoute;
