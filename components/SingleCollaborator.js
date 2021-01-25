@@ -14,9 +14,10 @@ const SingleCollaborator = ({
   // const id = navigation.getParam('id')
   // const { id, first, last } = route.params;
   // const { id } = route.params;
+  // console.log(route.params.id);
   console.log(route);
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.instructions, style]}>
+    <TouchableOpacity onPress={onPress} style={[styles.title, style]}>
       {/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" /> */}
       <Text>{`${first} ${last}`}</Text>
     </TouchableOpacity>

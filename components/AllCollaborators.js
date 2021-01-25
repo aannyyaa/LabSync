@@ -20,6 +20,8 @@ import {
 } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 import SingleCollaborator from './SingleCollaborator';
+import { withNavigation } from '@react-navigation/compat';
+
 
 const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -32,7 +34,8 @@ const AllCollaborators = ({ navigation }) => {
         onPress={() => {
           setSelectedId(item.id);
           navigation.navigate('collaborator', {
-            screen: 'all',
+            screen: 'collaborator',
+            initial: false,
             params: { id: item.id },
           });
         }}
@@ -80,6 +83,7 @@ const AllCollaborators = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   collabContainer: {
+    fontSize: 18,
     margin: '2%',
   },
   container: {
@@ -95,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AllCollaborators;
+export default withNavigation(AllCollaborators);
