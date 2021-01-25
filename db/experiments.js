@@ -1,8 +1,10 @@
+import images from './images';
+
 const experiments = [
   {
     id: 1,
-    title: 'experiment',
-    description: 'description',
+    title: 'Experiment',
+    description: 'Gel Electrophoresis',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
     results: [
@@ -12,10 +14,11 @@ const experiments = [
     ],
     sampleHeader: 'Sample',
     resultsHeader: 'Length (bp)',
+    imageUri: images[0].uri,
   },
   {
     id: 2,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -29,7 +32,7 @@ const experiments = [
   },
   {
     id: 3,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -43,7 +46,7 @@ const experiments = [
   },
   {
     id: 4,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -57,7 +60,7 @@ const experiments = [
   },
   {
     id: 5,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -71,7 +74,7 @@ const experiments = [
   },
   {
     id: 6,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -85,7 +88,7 @@ const experiments = [
   },
   {
     id: 7,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -99,7 +102,7 @@ const experiments = [
   },
   {
     id: 8,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -113,7 +116,7 @@ const experiments = [
   },
   {
     id: 9,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -127,7 +130,7 @@ const experiments = [
   },
   {
     id: 10,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -141,7 +144,7 @@ const experiments = [
   },
   {
     id: 11,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -155,7 +158,7 @@ const experiments = [
   },
   {
     id: 12,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -169,7 +172,7 @@ const experiments = [
   },
   {
     id: 13,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -183,7 +186,7 @@ const experiments = [
   },
   {
     id: 14,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -197,7 +200,7 @@ const experiments = [
   },
   {
     id: 15,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -211,7 +214,7 @@ const experiments = [
   },
   {
     id: 16,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -225,7 +228,7 @@ const experiments = [
   },
   {
     id: 17,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -239,7 +242,7 @@ const experiments = [
   },
   {
     id: 18,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -253,7 +256,7 @@ const experiments = [
   },
   {
     id: 19,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -267,7 +270,7 @@ const experiments = [
   },
   {
     id: 20,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -281,7 +284,7 @@ const experiments = [
   },
   {
     id: 21,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -295,7 +298,7 @@ const experiments = [
   },
   {
     id: 22,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -309,7 +312,7 @@ const experiments = [
   },
   {
     id: 23,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -323,7 +326,7 @@ const experiments = [
   },
   {
     id: 24,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
@@ -337,7 +340,7 @@ const experiments = [
   },
   {
     id: 25,
-    title: 'experiment',
+    title: 'Experiment',
     description: 'description',
     startDate: new Date(),
     samples: ['A', 'B', 'C'],
