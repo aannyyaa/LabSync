@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
@@ -11,11 +11,13 @@ const SingleCollaborator = ({
   route,
   navigation,
 }) => {
+  const [collab, setCollab] = useState(null)
   // const id = navigation.getParam('id')
   // const { id, first, last } = route.params;
   // const { id } = route.params;
   // console.log(route.);
   console.log(route);
+  // setCollab()
   return (
     <TouchableOpacity onPress={onPress} style={[styles.title, style]}>
       {/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" /> */}

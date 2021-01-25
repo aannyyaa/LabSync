@@ -27,7 +27,7 @@ const CollaboratorsRoute = () => {
             headerStyle: { backgroundColor: '#3700B3' },
             headerTintColor: '#fff',
           }}
-          initialParams={{ id: 1 }}
+          // initialParams={{ id: 1 }}
         />
       </Stack.Navigator>
     </NavigationContainer>
