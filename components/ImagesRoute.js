@@ -39,13 +39,17 @@ const ImagesRoute = () => {
 
   return (
     <View style={styles.contentContainer}>
-      {images.map((image) => {
-        return (
-          <View key={image.id} style={styles.imageContainer}>
-            <Image source={{ uri: image.uri }} style={styles.image} />
-          </View>
-        );
-      })}
+      <View style={styles.imageContainer}>
+        {images.map((image) => {
+          return (
+            <Image
+              key={image.id}
+              source={{ uri: image.uri }}
+              style={styles.image}
+            />
+          );
+        })}
+      </View>
       {selectedImage !== null ? (
         <Image
           source={{ uri: selectedImage.localUri }}
@@ -65,7 +69,6 @@ const ImagesRoute = () => {
 };
 
 const styles = StyleSheet.create({
-
   contentContainer: {
     flex: 1,
     alignItems: 'center',
@@ -79,10 +82,15 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
+    marginBottom: "3%",
+    borderColor: 'black',
+    borderWidth: 1,
   },
   imageContainer: {
     flex: 0,
-    flexDirection: 'column',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: "space-evenly"
   },
 });
 
