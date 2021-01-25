@@ -27,9 +27,9 @@ const SingleViewData = () => {
         </DataTable.Row>
       </DataTable>
       <Text>Images:</Text>
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
+      <Image source={{ uri: experiment.images[0] }} style={styles.image} />
+      <Image source={{ uri: experiment.images[1] }} style={styles.image} />
+      <Image source={{ uri: experiment.images[2] }} style={styles.image} />
     </ScrollView>
   );
 };

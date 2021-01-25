@@ -14,7 +14,7 @@ const experiments = [
     ],
     sampleHeader: 'Sample',
     resultsHeader: 'Length (bp)',
-    imageUri: images[0].uri,
+    images: [images[0].uri, images[1].uri, images[2].uri],
   },
   {
     id: 2,

@@ -33,6 +33,7 @@ const AllTasks = ({ navigation }) => {
       >
         <List.Item
           title={item.title}
+          description={`Deadline: ${item.deadline}`}
           left={(props) => (
             <List.Icon {...props} color={Colors.cyan400} icon="check" />
           )}
