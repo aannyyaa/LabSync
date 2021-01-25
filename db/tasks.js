@@ -8,7 +8,7 @@ const tasks = [
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
     creator: collaborators[2],
-    collaborators: [collaborators[2], collaborators[7], collaborators[8]],
+    collaborators: [collaborators[2], collaborators[7], collaborators[8], collaborators[11]],
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const tasks = [
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
     creator: collaborators[3],
-    collaborators: [collaborators[3], collaborators[9], collaborators[4]],
+    collaborators: [collaborators[3], collaborators[9], collaborators[4], collaborators[14]],
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const tasks = [
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
     creator: collaborators[4],
-    collaborators: [collaborators[4], collaborators[5], collaborators[6]],
+    collaborators: [collaborators[4], collaborators[5], collaborators[6], collaborators[13]],
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const tasks = [
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
     creator: collaborators[5],
-    collaborators: [collaborators[5], collaborators[7], collaborators[8]],
+    collaborators: [collaborators[5], collaborators[7], collaborators[8], collaborators[12]],
   },
   {
     id: 5,
@@ -44,7 +44,16 @@ const tasks = [
     startDate: new Date(),
     deadline: new Date(2021, 1, 1),
     creator: collaborators[6],
-    collaborators: [collaborators[6], collaborators[8], collaborators[9]],
+    collaborators: [collaborators[6], collaborators[8], collaborators[9], collaborators[11], collaborators[15]],
+  },
+  {
+    id: 6,
+    title: 'Grant Writing',
+    description: '',
+    startDate: new Date(),
+    deadline: new Date(2021, 1, 1),
+    creator: collaborators[0],
+    collaborators: [collaborators[0], collaborators[1]],
   }
 ]
 

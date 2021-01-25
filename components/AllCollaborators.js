@@ -33,7 +33,6 @@ const AllCollaborators = ({ navigation }) => {
             first: item.first,
             last: item.last,
             position: item.position,
-            tasks: item.tasks
           });
         }}
       >
