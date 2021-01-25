@@ -1,21 +1,35 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Avatar, Colors } from 'react-native-paper';
 import collaborators from '../db/collaborators';
 
-const SingleCollaborator = (props) => {
-  const collaborator = collaborators[0];
-
+const SingleCollaborator = ({
+  first,
+  last,
+  onPress,
+  style,
+  route,
+  navigation,
+}) => {
+  // const id = navigation.getParam('id')
+  // const { id, first, last } = route.params;
+  // const { id } = route.params;
+  console.log(route);
   return (
-    <View style={styles.container}>
-      <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" />
+    <TouchableOpacity onPress={onPress} style={[styles.instructions, style]}>
+      {/* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" /> */}
+      <Text>{`${first} ${last}`}</Text>
+    </TouchableOpacity>
+  );
+};
+
+{
+  /* <Avatar.Icon size={100} backgroundColor={Colors.cyan400} icon="account" />
       <Text
         style={styles.title}
       >{`${collaborator.first} ${collaborator.last}`}</Text>
-      <Text style={styles.instructions}>{`${collaborator.position}`}</Text>
-    </View>
-  );
-};
+      <Text style={styles.instructions}>{`${collaborator.position}`}</Text> */
+}
 
 const styles = StyleSheet.create({
   container: {

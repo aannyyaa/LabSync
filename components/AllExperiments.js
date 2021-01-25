@@ -9,8 +9,7 @@ import {
   View,
 } from 'react-native';
 import { DataTable } from 'react-native-paper';
-import experiments from '../db/data';
-import data from '../db/data';
+import experiments from '../db/experiments';
 
 const AllData = ({ navigation }) => {
   return (
@@ -20,7 +19,7 @@ const AllData = ({ navigation }) => {
         <DataTable.Title numeric>Date</DataTable.Title>
       </DataTable.Header>
       <ScrollView>
-        {data.map((experiment) => {
+        {experiments.map((experiment) => {
           return (
             <DataTable.Row key={experiment.id}>
               <DataTable.Cell
