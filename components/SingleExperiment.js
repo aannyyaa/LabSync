@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { DataTable } from 'react-native-paper';
 import experiments from '../db/experiments';
 
 const SingleViewData = () => {
   const experiment = experiments[0];
   return (
-    <View>
+    <ScrollView>
       <Text>{experiment.title}</Text>
       <DataTable>
         <DataTable.Header>
@@ -28,7 +28,9 @@ const SingleViewData = () => {
       </DataTable>
       <Text>Images:</Text>
       <Image source={{ uri: experiment.imageUri }} style={styles.image} />
-    </View>
+      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
+      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
+    </ScrollView>
   );
 };
 
@@ -39,8 +41,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   image: {
-    width: 500,
-    height: 350,
+    width: 400,
+    height: 250,
+    margin: '3%',
   },
 });
 

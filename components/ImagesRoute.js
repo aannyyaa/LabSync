@@ -1,6 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import {
   Appbar,
@@ -82,7 +89,7 @@ const styles = StyleSheet.create({
   image: {
     width: 100,
     height: 100,
-    marginBottom: "3%",
+    marginBottom: '3%',
     borderColor: 'black',
     borderWidth: 1,
   },
@@ -90,7 +97,7 @@ const styles = StyleSheet.create({
     flex: 0,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: "space-evenly"
+    justifyContent: 'space-evenly',
   },
 });
 
