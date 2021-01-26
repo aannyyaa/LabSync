@@ -71,7 +71,7 @@ const ImagesRoute = () => {
       <Button
         style={styles.button}
         mode="contained"
-        icon="camera-plus"
+        icon="image-plus"
         color={Colors.cyan400}
         onPress={openImagePickerAsync}
       >
