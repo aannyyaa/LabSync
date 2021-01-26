@@ -3,24 +3,30 @@ import images from './images';
 const experiments = [
   {
     id: 1,
-    title: 'Experiment',
-    description: 'Gel Electrophoresis',
-    startDate: new Date(),
-    samples: ['A', 'B', 'C'],
+    title: 'Gel Electrophoresis',
+    description: 'Ran the gel at 90V for 60 minutes',
+    startDate: new Date().toLocaleDateString(),
+    samples: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'],
     results: [
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
+      Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),
       Math.floor(Math.random() * 1000),
     ],
     sampleHeader: 'Sample',
     resultsHeader: 'Length (bp)',
-    imageUri: images[0].uri,
+    images: [images[0].uri, images[1].uri, images[2].uri],
   },
   {
     id: 2,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2021, 0, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -34,7 +40,7 @@ const experiments = [
     id: 3,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2021, 0, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -48,7 +54,7 @@ const experiments = [
     id: 4,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 11, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -62,7 +68,7 @@ const experiments = [
     id: 5,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 11, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -76,7 +82,7 @@ const experiments = [
     id: 6,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 10, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -90,7 +96,7 @@ const experiments = [
     id: 7,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 10, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -104,7 +110,7 @@ const experiments = [
     id: 8,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 9, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -118,7 +124,7 @@ const experiments = [
     id: 9,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 9, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -132,7 +138,7 @@ const experiments = [
     id: 10,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 8, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -146,7 +152,7 @@ const experiments = [
     id: 11,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 8, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -160,7 +166,7 @@ const experiments = [
     id: 12,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 7, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -174,7 +180,7 @@ const experiments = [
     id: 13,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 7, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -188,7 +194,7 @@ const experiments = [
     id: 14,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 6, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -202,7 +208,7 @@ const experiments = [
     id: 15,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 6, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -216,7 +222,7 @@ const experiments = [
     id: 16,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 5, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -230,7 +236,7 @@ const experiments = [
     id: 17,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 5, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -244,7 +250,7 @@ const experiments = [
     id: 18,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 4, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -258,7 +264,7 @@ const experiments = [
     id: 19,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 4, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -272,7 +278,7 @@ const experiments = [
     id: 20,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 3, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -286,7 +292,7 @@ const experiments = [
     id: 21,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 3, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -300,7 +306,7 @@ const experiments = [
     id: 22,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 2, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -314,7 +320,7 @@ const experiments = [
     id: 23,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 2, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -328,7 +334,7 @@ const experiments = [
     id: 24,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 1, 15).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),
@@ -342,7 +348,7 @@ const experiments = [
     id: 25,
     title: 'Experiment',
     description: 'description',
-    startDate: new Date(),
+    startDate: new Date(2020, 2, 1).toLocaleDateString(),
     samples: ['A', 'B', 'C'],
     results: [
       Math.floor(Math.random() * 1000),

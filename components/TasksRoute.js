@@ -14,6 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SingleTask from './SingleTask';
 import AllTasks from './AllTasks';
+import AddNewTask from './AddNewTask'
 
 const Stack = createStackNavigator();
 
@@ -23,6 +24,7 @@ const TasksRoute = () => {
       <Stack.Navigator initialRouteName="my tasks">
         <Stack.Screen name="my tasks" component={AllTasks} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}} />
         <Stack.Screen name="single task" component={SingleTask} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
+        <Stack.Screen name="new task" component={AddNewTask} options={{headerStyle: {backgroundColor: '#3700B3'}, headerTintColor: '#fff'}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

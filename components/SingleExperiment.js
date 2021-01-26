@@ -1,13 +1,32 @@
 import * as React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { DataTable } from 'react-native-paper';
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
+import { Card, DataTable, Title } from 'react-native-paper';
 import experiments from '../db/experiments';
+import images from '../db/images';
 
 const SingleViewData = () => {
+  const renderItem = ({ item }) => {
+    return (
+      <Card style={styles.card}>
+        <Card.Content>
+          <Title>{item.title}</Title>
+        </Card.Content>
+        <Card.Cover source={{ uri: item.uri }} />
+      </Card>
+    );
+  };
   const experiment = experiments[0];
+  const experimentImages = images.slice(0,3)
   return (
-    <ScrollView>
-      <Text>{experiment.title}</Text>
+    <ScrollView style={styles.background}>
+      <Title style={styles.title}>{experiment.title}</Title>
       <DataTable>
         <DataTable.Header>
           <DataTable.Title>{experiment.sampleHeader}</DataTable.Title>
@@ -25,25 +44,54 @@ const SingleViewData = () => {
           <DataTable.Cell>{experiment.samples[2]}</DataTable.Cell>
           <DataTable.Cell numeric>{experiment.results[2]}</DataTable.Cell>
         </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[3]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[3]}</DataTable.Cell>
+        </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[4]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[4]}</DataTable.Cell>
+        </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[5]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[5]}</DataTable.Cell>
+        </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[6]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[6]}</DataTable.Cell>
+        </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[7]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[7]}</DataTable.Cell>
+        </DataTable.Row>
+        <DataTable.Row>
+          <DataTable.Cell>{experiment.samples[8]}</DataTable.Cell>
+          <DataTable.Cell numeric>{experiment.results[8]}</DataTable.Cell>
+        </DataTable.Row>
+
       </DataTable>
-      <Text>Images:</Text>
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
-      <Image source={{ uri: experiment.imageUri }} style={styles.image} />
+      <Title style={styles.title}>Images</Title>
+      <FlatList
+        horizontal
+        data={experimentImages}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  instructions: {
-    color: '#888',
-    fontSize: 18,
-    marginHorizontal: 15,
+  background: {
+    backgroundColor: '#fff',
   },
-  image: {
-    width: 400,
-    height: 250,
-    margin: '3%',
+  title: {
+    margin: 10
+  },
+  card: {
+    minWidth: 300,
+    margin: 10,
+    marginBottom: 25,
   },
 });
 

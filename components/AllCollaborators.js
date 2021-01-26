@@ -19,7 +19,6 @@ import {
   Provider,
 } from 'react-native-paper';
 import collaborators from '../db/collaborators';
-import { withNavigation } from '@react-navigation/compat';
 
 const AllCollaborators = ({ navigation }) => {
   const [selectedId, setSelectedId] = useState(null);
@@ -33,11 +32,14 @@ const AllCollaborators = ({ navigation }) => {
             first: item.first,
             last: item.last,
             position: item.position,
-            tasks: item.tasks
           });
         }}
       >
-        <Text>{`${item.first} ${item.last}`}</Text>
+        <List.Item
+        title={`${item.first} ${item.last}`}
+        description={item.position}
+        left={props => <List.Icon {...props} color={Colors.cyan400} icon="account" />}
+        />
       </TouchableOpacity>
     );
   };
@@ -55,21 +57,15 @@ const AllCollaborators = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  collabContainer: {
-    fontSize: 18,
-    margin: '2%',
-  },
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    fontSize: 18,
-    margin: '2%',
+    backgroundColor: '#fff'
   },
   title: {
-    fontSize: 32,
+    fontSize: 15,
+    margin: '2%',
   },
+
 });
 
-export default withNavigation(AllCollaborators);
+export default AllCollaborators;
