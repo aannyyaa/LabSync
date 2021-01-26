@@ -2,32 +2,32 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Colors, TextInput } from 'react-native-paper';
 
-const AddNewTask = () => {
+const AddNewExperiment = () => {
   const [title, setTitle] = React.useState('');
-  const [description, setDescription] = React.useState('');
-  const [results, setResults] = React.useState('');
+  const [deadline, setDeadline] = React.useState('');
+  const [collaborators, setCollaborators] = React.useState('');
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        label="Task Title"
+        label="Experiment Title"
         value={title}
         onChangeText={(title) => setTitle(title)}
       />
       <TextInput
         style={styles.input}
-        label="Description"
-        value={description}
-        onChangeText={(description) => setDescription(description)}
+        label="Deadline"
+        value={deadline}
+        onChangeText={(deadline) => setDeadline(deadline)}
       />
       <TextInput
         style={styles.input}
-        label="Results"
-        value={results}
-        onChangeText={(results) => setResults(results)}
+        label="Collaborators"
+        value={collaborators}
+        onChangeText={(collaborators) => setCollaborators(collaborators)}
       />
       <Button
-        icon="flask-plus"
+        icon="folder-plus"
         mode="contained"
         color={Colors.cyan400}
         style={styles.button}
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddNewTask;
+export default AddNewExperiment;

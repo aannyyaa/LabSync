@@ -37,7 +37,7 @@ const AllData = ({ navigation }) => {
         mode="contained"
         color={Colors.cyan400}
         style={styles.button}
-        onPress={() => console.log('new experiment')}
+        onPress={() => navigation.navigate('new experiment')}
       >
         Add
       </Button>
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '33%',
-    margin: "5%",
-    marginLeft: '33%'
+    margin: '5%',
+    marginLeft: '33%',
   },
 });
 
