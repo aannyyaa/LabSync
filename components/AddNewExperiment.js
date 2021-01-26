@@ -5,7 +5,7 @@ import { Button, Colors, TextInput } from 'react-native-paper';
 const AddNewExperiment = () => {
   const [title, setTitle] = React.useState('');
   const [deadline, setDeadline] = React.useState('');
-  const [collaborators, setCollaborators] = React.useState('');
+  const [results, setResults] = React.useState('');
   return (
     <View style={styles.container}>
       <TextInput
@@ -22,9 +22,9 @@ const AddNewExperiment = () => {
       />
       <TextInput
         style={styles.input}
-        label="Collaborators"
-        value={collaborators}
-        onChangeText={(collaborators) => setCollaborators(collaborators)}
+        label="Results"
+        value={results}
+        onChangeText={(results) => setResults(results)}
       />
       <Button
         icon="folder-plus"

@@ -5,7 +5,7 @@ import { Button, Colors, TextInput } from 'react-native-paper';
 const AddNewTask = () => {
   const [title, setTitle] = React.useState('');
   const [description, setDescription] = React.useState('');
-  const [results, setResults] = React.useState('');
+  const [collaborators, setCollaborators] = React.useState('');
   return (
     <View style={styles.container}>
       <TextInput
@@ -22,9 +22,9 @@ const AddNewTask = () => {
       />
       <TextInput
         style={styles.input}
-        label="Results"
-        value={results}
-        onChangeText={(results) => setResults(results)}
+        label="Collaborators"
+        value={collaborators}
+        onChangeText={(collaborators) => setCollaborators(collaborators)}
       />
       <Button
         icon="flask-plus"
